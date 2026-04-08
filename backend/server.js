@@ -95,7 +95,7 @@ const start = async () => {
   } catch (err) {
     // Si une erreur survient au démarrage (ex: MySQL pas lancé)
     // on l'affiche clairement et on arrête le processus
-    console.error('❌ Erreur au démarrage :', err.message);
+    console.error(' Erreur au démarrage :', err.message);
     process.exit(1);
   }
 };

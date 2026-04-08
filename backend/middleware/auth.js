@@ -16,23 +16,7 @@ module.exports = (req, res, next) => {
     if (err) {
       return res.status(401).json({ message: 'Token invalide' });
     }
-    req.user = user; // on attache l'utilisateur à la requête
-    next(); // on laisse passer
+    req.user = user; 
+    next(); 
   });
 };
-
-
-
-
- /* Comment ça marche ?
-
-Requête arrive
-      ↓
-Le videur regarde le header Authorization
-      ↓
-Pas de token ?  → ❌ Refusé (401)
-Token invalide? → ❌ Refusé (401)
-Token valide ?  → ✅ Laissé passer (next)
-      ↓
-La route s'exécute normalement
-*/
